@@ -11,6 +11,7 @@ generate(limite){
     this.productos.push({
       id:crypto.randomUUID(),
       nombre:'producto'+index,
+      cantidad:10 + Math.floor(Math.random()*190),
       precio: 10 + Math.floor(Math.random()*190)
     });
   }
