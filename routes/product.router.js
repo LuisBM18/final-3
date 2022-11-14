@@ -27,7 +27,7 @@ const body = req.body;
 const nuevoProducto = service.create(body);
 res.status(201).json({
   message:'producto creado',
-  nuevoProducto
+  nuevoProducto1
 });
 });
 router.patch('/:id',(req,res)=>{
