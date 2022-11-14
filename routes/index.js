@@ -1,14 +1,17 @@
 const express = require('express');
 const productoRouter = require('./product.router');
 const UsuariosRouter = require('./usuario.router');
+const empleadoRouter = require('./empleados.router');
+const pedidoRouter = require('./pedido.router');
 
-function routerApi(app){1
-  const routerv1 = express.Router();
-  const routerv2 = express.Router();
-  app.use('/api/v1',routerv1);
-  routerv1.use('/productos',productoRouter);
-  app.use('/api/v2',routerv2);
-  routerv2.use('/usuarios',UsuariosRouter);
+function routerApi(app){
+  const router = express.Router();
+  app.use('/api/v1',router);
+  router.use('/productos',productoRouter);
+  router.use('/usuarios',UsuariosRouter);
+  router.use('/empleados',empleadoRouter);
+  router.use('/pedidos', pedidoRouter);
+
 }
 
 module.exports = routerApi;
